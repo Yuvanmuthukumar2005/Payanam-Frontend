@@ -59,13 +59,37 @@
 
           <div class="mb-3" id="otpSection" style="display:none;">
             <label class="form-label fw-semibold">Enter OTP</label>
+            <div class="d-flex gap-2">
             <input type="text" id="otpInput" class="form-control" placeholder="Enter OTP">
+            <button type="button" class="btn btn-success mt-2" onclick="verifyOTP()">Verify OTP</button>
+            </div>
             <small id="otpMsg" class="text-danger"></small>
+            
           </div>
 
           <div class="mb-3">
             <label class="form-label fw-semibold">Email Address</label>
             <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">License No</label>
+            <input type="text" class="form-control" placeholder="License No" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Vehicle No</label>
+            <input type="text" class="form-control" placeholder="Vehicle No" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Vehicle Type</label>
+            <input type="text" class="form-control" placeholder="Vehicle Type" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Vehicle Model</label>
+            <input type="text" class="form-control" placeholder="Vehicle Model" required>
           </div>
 
           <div class="mb-3">
@@ -154,5 +178,14 @@
   </div>
 </main>
 
+<script src="script.js">
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+</script>
 </body>
 </html>
