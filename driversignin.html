@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payanam</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+<body>
+
+    <header>
+  <nav class="nav-bar bg-warning container-fluid" role="navigation">
+    <div class="nav-left">
+      <a href="index.html" class="Logo">PAYANAM</a>
+    </div>
+
+    <!-- hamburger toggle -->
+    <button id="menu-toggle" class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <!-- nav links -->
+    <div id="nav-links" class="nav-Links" role="menu">
+      <a class="link-dark" href="index.html">Home</a>
+      <a class="link-dark" href="about.html">About</a>
+      <a class="link-dark" href="outstation.html">Outstation</a>
+      <a class="link-dark" href="contact.html">Contact</a>
+    </div>
+
+  </nav>
+</header>
+    <main class="container py-5">
+  <div class="row align-items-center">
+
+    <!-- LEFT: SIGN UP FORM -->
+    <div class="col-lg-5 mb-4">
+      <div class="card shadow-lg border-0 p-4 signup-card">
+        <h3 class="text-center fw-bold mb-4 text-warning">Driver Register</h3>
+
+        <form>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Full Name</label>
+            <input type="text" class="form-control" placeholder="Your name" required>
+          </div>
+
+          <!-- Mobile + OTP -->
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Mobile Number</label>
+            <div class="d-flex gap-2">
+              <input type="tel" id="mobile" class="form-control" placeholder="Mobile Number" required>
+              <button type="button" class="btn btn-secondary" onclick="sendOTP()">Send OTP</button>
+            </div>
+          </div>
+
+          <div class="mb-3" id="otpSection" style="display:none;">
+            <label class="form-label fw-semibold">Enter OTP</label>
+            <input type="text" id="otpInput" class="form-control" placeholder="Enter OTP">
+            <small id="otpMsg" class="text-danger"></small>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Email Address</label>
+            <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Password</label>
+            <input type="password" class="form-control" placeholder="Enter password" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Confirm Password</label>
+            <input type="password" class="form-control" placeholder="Re-enter password" required>
+          </div>
+
+          <button type="submit" class="btn btn-warning w-100 fw-bold">
+            Sign Up as Driver
+          </button>
+        </form>
+
+        <div class="text-center mt-3">
+          <p>Already have an account?
+            <a href="login.html" class="text-warning fw-semibold">Log in</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: ABOUT PAYANAM -->
+    <div class="col-lg-7">
+      <h2 class="fw-bold text-warning mb-3">Why Drive with Payanam?</h2>
+
+      <p class="text-muted">
+        Payanam is a <strong>driver-first cab platform</strong> built from real-life
+        experiences. We understand the challenges drivers face every day.
+      </p>
+
+      <blockquote class="border-start border-warning ps-3 fst-italic text-dark">
+        “If we go offline, we don’t get our incentives.”
+      </blockquote>
+
+      <p>
+        That single sentence inspired Payanam — a platform where drivers don’t have to
+        sacrifice their <strong>health for earnings</strong>.
+      </p>
+
+      <ul class="list-unstyled mt-4">
+        <li class="mb-2">🚘 Take breaks without logging out</li>
+        <li class="mb-2">🛑 No trip requests during break time</li>
+        <li class="mb-2">💰 Incentives continue during approved breaks</li>
+        <li class="mb-2">❤️ Designed with driver health in mind</li>
+        <li class="mb-2">🤝 Drivers treated as partners, not numbers</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- BOTTOM: DRIVER BENEFITS -->
+  <div class="row mt-5">
+    <div class="col-12 text-center">
+      <h3 class="fw-bold text-warning mb-4">Benefits of Being a Payanam Driver</h3>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow-sm text-center p-3">
+        <h5>🛑 Smart Break System</h5>
+        <p class="text-muted">
+          Take meals and rest without losing incentives or going offline.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow-sm text-center p-3">
+        <h5>💰 Fair Incentives</h5>
+        <p class="text-muted">
+          Earn consistently without pressure to stay active nonstop.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <div class="card h-100 shadow-sm text-center p-3">
+        <h5>❤️ Health & Safety First</h5>
+        <p class="text-muted">
+          Balanced work hours mean safer roads and happier drivers.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>
